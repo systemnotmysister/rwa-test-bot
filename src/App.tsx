@@ -1,9 +1,9 @@
 import './App.css';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
-import Claim from './components/Claim';
-import UpgradeTime from './components/UpgradeTime';
-import UpgradeSpeed from './components/UpgradeSpeed';
-import Missions from './components/Missions';
+import Claim from './components/Claim.tsx';
+import UpgradeTime from './components/UpgradeTime.tsx';
+import UpgradeSpeed from './components/UpgradeSpeed.tsx';
+import Missions from './components/Missions.tsx';
 import React, { useEffect, useState } from 'react';
 
 function App() {

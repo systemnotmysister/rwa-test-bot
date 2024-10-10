@@ -2,10 +2,11 @@
   
     "compilerOptions": {
       "types": ["node"] ,
-      "jsx": "react",
-    "jsx": "react",
-    "jsx": "react",
-    "jsx": "react",
+      "jsx": "react-jsx",
+
+    "noEmit": true, // добавьте эту строку
+
+    "allowImportingTsExtensions": true,
     "target": "esnext", // Выберите нужную версию JavaScript
     "module": "commonjs", // Используйте CommonJS для совместимости с Node.js
     "strict": true, // Включает строгую проверку типов
