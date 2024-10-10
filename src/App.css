@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  background-image: url('./pero.png');
+  background-image: url('../public/pero.png');
   background-size: cover;
   background-position: center;
   padding: 10px;
@@ -16,12 +16,12 @@
   justify-content: space-between;
 }
 .default-bg {
-  background-image: url('./pero.png');
+  background-image: url('../public/pero.png');
   background-size: cover;
 }
 
 .missions-bg {
-  background-image: url('./mission.png');
+  background-image: url('../public/mission.png');
   background-size: cover;
 }
 .button {
@@ -101,7 +101,7 @@ padding: 6px;
     display: flex;
 
     flex-grow: 1;
-    background-image: url('../claim.png');
+    background-image: url('../public/claim.png');
     background-size: contain;
     width: 102%;
     background-repeat: no-repeat;
@@ -114,7 +114,7 @@ padding: 6px;
 
 .ttime{
   flex-grow: 1;
-  background-image: url('../time.png');
+  background-image: url('../public/time.png');
   background-size: contain;
   background-position: center;
   width: 100%;
@@ -131,7 +131,7 @@ padding: 6px;
 
 .sspeed{
   flex-grow: 1;
-  background-image: url('../upgrade.png');
+  background-image: url('../public/upgrade.png');
   background-size: contain;
   background-position: center;
   width: 100%;
@@ -151,7 +151,7 @@ padding: 6px;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    background-image: url('../mission.png');
+    background-image: url('../public/mission.png');
     background-size: cover;
     background-position: center;
     padding: 10px;

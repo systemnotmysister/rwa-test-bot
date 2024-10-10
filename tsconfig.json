@@ -1,7 +1,6 @@
 {
   
     "compilerOptions": {
-      "types": ["node"] ,
       "jsx": "react-jsx",
 
     "noEmit": true, // добавьте эту строку

@@ -8,7 +8,6 @@ import React, { useEffect, useState } from 'react';
 
 function App() {
   // const location = useLocation();
-  // const [bgClass, setBgClass] = useState('default-bg');
 
   // useEffect(() => {
   //   // Устанавливаем класс фона в зависимости от текущего маршрута
