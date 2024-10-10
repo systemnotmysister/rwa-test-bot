@@ -1,0 +1,162 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url('./pero.png');
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  /* position: fixed; */
+}
+.body {margin: 0px;display: block;}
+/* Верхние кнопки */
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.default-bg {
+  background-image: url('./pero.png');
+  background-size: cover;
+}
+
+.missions-bg {
+  background-image: url('./mission.png');
+  background-size: cover;
+}
+.button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-im{
+padding: 6px;
+}
+
+
+
+/* Основной контент */
+.main-content {
+  flex-grow: 1;
+  /* background-image: url('../public/claim.png'); */
+  background-size: contain;
+  background-position: center;
+  width: 107%;
+  margin-left: -5%;
+  margin-bottom: -13%;
+  height: 10%;
+  background-repeat: no-repeat;
+  padding: 2px;
+  display: none;
+}
+
+/* Нижние кнопки */
+.bottom-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 5%;
+  position: absolute;
+    bottom: 0;
+}
+
+.bottom-buttons .button {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  
+}
+
+.button .image{width: 80px;}
+
+.icon-kepka {
+  display: flex;;
+  margin-left: 8%;
+  margin-top: 6%;
+}
+
+  .button icon-wallet {
+    display: flex;;
+    margin-left: 8%;
+    margin-top: 6%;
+  }
+
+  .image{width: 89px;}
+/* Адаптивность для небольших экранов */
+@media (max-width: 600px) {
+  .bottom-buttons .button {
+    width: 80px;
+    height: 46px;
+  }}
+
+
+
+  .cclaim {
+    display: flex;
+
+    flex-grow: 1;
+    background-image: url('../claim.png');
+    background-size: contain;
+    width: 102%;
+    background-repeat: no-repeat;
+    margin-bottom: 0%;
+    padding: 7px;
+    margin-top: 10%;
+    margin-left: -3%;
+}
+  
+
+.ttime{
+  flex-grow: 1;
+  background-image: url('../time.png');
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  margin-left: -3%;
+  margin-bottom: 26%;
+  height: 10%;
+  height: 10%;
+  background-repeat: no-repeat;
+  padding: 12px;
+  display: flex;
+  
+}
+
+
+.sspeed{
+  flex-grow: 1;
+  background-image: url('../upgrade.png');
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  margin-left: -3%;
+  margin-bottom: 26%;
+  height: 10%;
+  height: 10%;
+  background-repeat: no-repeat;
+  padding: 12px;
+  display: flex;
+  }
+
+  .cont-mis {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url('../mission.png');
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    /* position: fixed; */
+  }
+
+
+  

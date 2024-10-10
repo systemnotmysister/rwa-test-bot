@@ -1,0 +1,27 @@
+{
+  
+    "compilerOptions": {
+      "types": ["node"] ,
+      "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "target": "esnext", // Выберите нужную версию JavaScript
+    "module": "commonjs", // Используйте CommonJS для совместимости с Node.js
+    "strict": true, // Включает строгую проверку типов
+    "esModuleInterop": true, // Позволяет импортировать CommonJS-модули
+    "skipLibCheck": true, // Пропускает проверку библиотек для улучшения производительности
+    "forceConsistentCasingInFileNames": true,
+     // Обеспечивает согласованность регистров в именах файлов
+    "typeRoots": [
+      "./node_modules/@types" // Указывает корневые каталоги типов
+    ],
+    "types": ["node"], // Добавляет типы Node.js
+    "baseUrl": "./", // Указывает базовый URL для разрешения неявных модулей
+    "paths": {
+      "*": ["node_modules/*"] // Позволяет TypeScript искать модули в node_modules
+    }
+  },
+  "include": ["src/**/*"], // Указывает папки и файлы для включения в проект
+  "exclude": ["node_modules"] // Указывает папки и файлы для исключения из проекта
+}
