@@ -5,7 +5,7 @@ import UpgradeTime from './components/UpgradeTime.tsx';
 import UpgradeSpeed from './components/UpgradeSpeed.tsx';
 import Missions from './components/Missions.tsx';
 import Refferal from './components/Refferal.tsx';
-import Nft from './components/nft.tsx';
+import Nft from './components/Nft.tsx';
 
 import './App.css';
 
