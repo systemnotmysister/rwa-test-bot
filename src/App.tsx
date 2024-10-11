@@ -1,22 +1,45 @@
-import './App.css';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import Claim from './components/Claim.tsx';
 import UpgradeTime from './components/UpgradeTime.tsx';
 import UpgradeSpeed from './components/UpgradeSpeed.tsx';
 import Missions from './components/Missions.tsx';
-import React, { useEffect, useState } from 'react';
+import Refferal from './components/Refferal.tsx';
+import Nft from './components/nft.tsx';
+
+import './App.css';
 
 function App() {
-  // const location = useLocation();
+  const [bgClass, setBgClass] = useState('default-bg');
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   // Устанавливаем класс фона в зависимости от текущего маршрута
-  //   const isMissionsPage = location.pathname === '/missions';
-  //   setBgClass(isMissionsPage ? 'missions-bg' : 'default-bg');
-  // }, [location]);
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/claim':
+        setBgClass('claim-bg');
+        break;
+      case '/upgrade-time':
+        setBgClass('upgrade-time-bg');
+        break;
+      case '/upgrade-speed':
+        setBgClass('upgrade-speed-bg');
+        break;
+      case '/missions':
+        setBgClass('missions-bg');
+        break;
+      case '/nft':
+        setBgClass('nft-bg');
+        break;
+      case '/refferals':
+        setBgClass('refferal-bg');
+        break;
+      default:
+        setBgClass('default-bg');
+    }
+  }, [location]);
 
   return (
-    <div className={`container`}>
+    <div className={`container ${bgClass}`}>
       <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="" />
@@ -25,16 +48,22 @@ function App() {
           <img className='header-im' src="./wallet.png" alt="" />
         </div>
       </div>
-      <div className="main-content"></div>
-
+      
       <div className="bottom-buttons">
         <div className="button">
-          <Link to='/claim'>
-            <img className='image' src="./cup.png" alt="claim" />
+          <Link to='/upgrade-time'>
+            <img className='image' src="./cup.png" alt="upgrade time" />
           </Link>
         </div>
         <div className="button">
-          <img className='image' src="./dengi.png" alt="upgrade-time" />
+          <Link to='/claim'>
+            <img className='image' src="./dengi.png" alt="claim" />
+          </Link>
+        </div>
+        <div className="button">
+          <Link to='/upgrade-speed'>
+            <img className='image' src="./up.png" alt="upgrade speed" />
+          </Link>
         </div>
         <div className="button">
           <Link to='/missions'>
@@ -42,27 +71,24 @@ function App() {
           </Link>
         </div>
         <div className="button">
-          <Link to='/upgrade-time'>
-            <img className='image' src="./palitra.png" alt="upgrade" />
+          <Link to='/nft'>
+            <img className='image' src="./palitra.png" alt="nft" />
           </Link>
         </div>
         <div className="button">
-          <Link to='/upgrade-speed'>
-            <img className='image' src="./up.png" alt="upgrade-speed" />
+          <Link to='/refferals'>
+            <img className='image' src="./ref.png" alt="refferals" />
           </Link>
-        </div>
-        <div className="button">
-          <img className='image' src="./ref.png" alt="referrals" />
         </div>
       </div>
 
       <Routes>
-      {/* <Route path="/" element={<App />} /> */}
-
         <Route path="/claim" element={<Claim />} />
         <Route path="/upgrade-time" element={<UpgradeTime />} />
         <Route path="/upgrade-speed" element={<UpgradeSpeed />} />
         <Route path="/missions" element={<Missions />} />
+        <Route path="/nft" element={<Nft />} />
+        <Route path="/refferals" element={<Refferal />} />
       </Routes>
     </div>
   );
