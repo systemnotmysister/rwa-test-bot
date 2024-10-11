@@ -134,6 +134,9 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background-repeat: no-repeat;
   padding: 7px;
 }
-@media (max-width: 600px) {
-  .bottom-buttons .button {
-    width: 32%;  }}
+
+
+  @media (max-width: 375px) {
+    .ttime{
+      margin-bottom: 50% !important;
+      height: 61% !important}}
