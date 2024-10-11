@@ -116,10 +116,10 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background-size: contain;
   background-position: center;
   margin-left: -4%;
-  margin-bottom: 71%;
   background-repeat: no-repeat;
   display: flex;
-  height: 53%;
+  margin-bottom: 53%;
+  height: 55%;
 }
 
 .sspeed{
