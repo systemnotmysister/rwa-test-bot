@@ -115,12 +115,11 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   .ttime{
   background-size: contain;
   background-position: center;
-  margin-left: -4%;
+  margin-left: -1%;
   background-repeat: no-repeat;
   display: flex;
-  margin-bottom: 53%;
-  height: 55%;
-}
+  margin-bottom: 65% !important;
+  }
 
 .sspeed{
   flex-grow: 1;
@@ -138,5 +137,6 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
   @media (max-width: 375px) {
     .ttime{
-      margin-bottom: 50% !important;
-      height: 61% !important}}
+      margin-bottom: 44% !important
+    }
+  }
