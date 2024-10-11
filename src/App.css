@@ -49,34 +49,27 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 }
 
 .top-buttons {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
 }
 
 .bottom-buttons {
   flex-wrap: wrap;
-    justify-content: space-evenly;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    height: 146px;
-    width: 85%;
-    margin-left: 8%;
-} 
-
-.bottom-buttons .button {
-  /* flex-wrap: wrap;
   justify-content: space-evenly;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   display: flex;
-  width: 85%;
-  margin-left: 8%; */
-  height: 69px; 
-}
+  width: 83%;
+  margin-left: 12%;
+  height: 129px;
 
-.button .image{width: 92px;}
+} 
+
+
+
+.button .image{    width: 80px;
+  display: flex;}
 
 
 .header-im, .image {
@@ -106,18 +99,29 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   flex-grow: 1;
 
 }
-.ttime{
-  flex-grow: 1;
+
+  /* flex-grow: 1; */
   /* background-image: url('/public/time.png'); */
+  /* background-size: contain; */
+  /* background-position: center; */
+  /* width: 104%; */
+  /* margin-left: -4%; */
+  /* margin-left: -4%; */
+  /* margin-bottom: 59%; */
+  /* background-repeat: no-repeat; */
+  /* padding: 7px; */
+  /* display: flex; */
+
+  .ttime{
   background-size: contain;
   background-position: center;
-  width: 104%;
   margin-left: -4%;
-  margin-bottom: 75%;
+  margin-bottom: 61%;
   background-repeat: no-repeat;
-  /* padding: 7px; */
   display: flex;
-}.sspeed{
+}
+
+.sspeed{
   flex-grow: 1;
   background-image: url('/public/upgrade.png');
   background-size: contain;
@@ -129,3 +133,6 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background-repeat: no-repeat;
   padding: 7px;
 }
+@media (max-width: 600px) {
+  .bottom-buttons .button {
+    width: 32%;  }}
