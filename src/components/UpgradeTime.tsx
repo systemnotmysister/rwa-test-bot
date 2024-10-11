@@ -5,8 +5,7 @@ function UpgradeTime() {
 
   return (
 
-      <div className="ttime"></div>
-     
+    <img className='ttime' src="./time.png" alt="upgrade time" />
 
 
   );
