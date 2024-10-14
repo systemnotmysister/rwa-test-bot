@@ -1,27 +1,23 @@
 {
-  
     "compilerOptions": {
       "jsx": "react-jsx",
-
-    "noEmit": true, // добавьте эту строку
-
-    "allowImportingTsExtensions": true,
-    "target": "esnext", // Выберите нужную версию JavaScript
-    "module": "commonjs", // Используйте CommonJS для совместимости с Node.js
-    "strict": true, // Включает строгую проверку типов
-    "esModuleInterop": true, // Позволяет импортировать CommonJS-модули
-    "skipLibCheck": true, // Пропускает проверку библиотек для улучшения производительности
-    "forceConsistentCasingInFileNames": true,
-     // Обеспечивает согласованность регистров в именах файлов
-    "typeRoots": [
-      "./node_modules/@types" // Указывает корневые каталоги типов
-    ],
-    "types": ["node"], // Добавляет типы Node.js
-    "baseUrl": "./", // Указывает базовый URL для разрешения неявных модулей
-    "paths": {
-      "*": ["node_modules/*"] // Позволяет TypeScript искать модули в node_modules
-    }
-  },
-  "include": ["src/**/*"], // Указывает папки и файлы для включения в проект
-  "exclude": ["node_modules"] // Указывает папки и файлы для исключения из проекта
-}
+      "noEmit": true,
+      "allowImportingTsExtensions": true,
+      "target": "esnext",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      
+      "forceConsistentCasingInFileNames": true,
+      "typeRoots": ["./node_modules/@types"],
+      "types": ["node"],
+      "baseUrl": "./",
+      "paths": {
+        "*": ["node_modules/*"]
+      }
+    },
+    "include": ["src", "global.d.ts"],  // Исправь путь к директории src и global.d.ts
+    "exclude": ["node_modules"]
+  }
+  

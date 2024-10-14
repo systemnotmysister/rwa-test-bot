@@ -7,8 +7,6 @@ function Speed() {
         
         <img className='ttime' src="./upgrade.png" alt="upgrade speed" />
 
-  
-  
     );
   }
   

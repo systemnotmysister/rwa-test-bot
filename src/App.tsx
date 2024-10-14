@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Routes, Route, useLocation } from 'react-router-dom';
-import Claim from './components/Claim.tsx';
-import UpgradeTime from './components/UpgradeTime.tsx';
-import UpgradeSpeed from './components/UpgradeSpeed.tsx';
-import Missions from './components/Missions.tsx';
-import Refferal from './components/Refferal.tsx';
-import Nft from './components/Nft.tsx';
-
+import React, { Suspense, useState, useEffect } from 'react';
+import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
+
+// Используем React.lazy для ленивой загрузки компонентов
+const Claim = React.lazy(() => import('./components/Claim.tsx'));
+const UpgradeTime = React.lazy(() => import('./components/UpgradeTime.tsx'));
+const UpgradeSpeed = React.lazy(() => import('./components/UpgradeSpeed.tsx'));
+const Missions = React.lazy(() => import('./components/Missions.tsx'));
+const Refferal = React.lazy(() => import('./components/Refferal.tsx'));
+const Nft = React.lazy(() => import('./components/Nft.tsx'));
+const Home = React.lazy(() => import('./components/Home.tsx'));
 
 function App() {
   const [bgClass, setBgClass] = useState('default-bg');
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Изменение фона в зависимости от пути
     switch (location.pathname) {
       case '/claim':
         setBgClass('claim-bg');
@@ -38,17 +42,39 @@ function App() {
     }
   }, [location]);
 
+  useEffect(() => {
+    if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
+      const telegram = window.Telegram.WebApp;
+  
+      // Показываем кнопку "Назад"
+      telegram.BackButton.show();
+  
+      // Обработчик нажатия на кнопку "Назад"
+      telegram.BackButton.onClick(() => {
+        navigate(-1); // Переход назад по истории
+      });
+    } else {
+      console.error('Telegram WebApp is not available');
+    }
+  
+    return () => {
+      if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
+        window.Telegram.WebApp.BackButton.hide();
+      }
+    };
+  }, [navigate]);
+
   return (
     <div className={`container ${bgClass}`}>
       <div className="top-buttons">
         <div className="button icon-graduation">
-          <img className='header-im' src="./kepka.png" alt="" />
+          <img className='header-im' src="./kepka.png" alt="graduation cap" />
         </div>
         <div className="button icon-wallet">
-          <img className='header-im' src="./wallet.png" alt="" />
+          <img className='header-im' src="./wallet.png" alt="wallet" />
         </div>
       </div>
-      
+
       <div className="bottom-buttons">
         <div className="button">
           <Link to='/upgrade-time'>
@@ -82,14 +108,18 @@ function App() {
         </div>
       </div>
 
-      <Routes>
-        <Route path="/claim" element={<Claim />} />
-        <Route path="/upgrade-time" element={<UpgradeTime />} />
-        <Route path="/upgrade-speed" element={<UpgradeSpeed />} />
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/nft" element={<Nft />} />
-        <Route path="/refferals" element={<Refferal />} />
-      </Routes>
+      {/* Добавляем Suspense для обработки загрузки компонентов */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/*" element={<Home />} />
+          <Route path="/claim" element={<Claim />} />
+          <Route path="/upgrade-time" element={<UpgradeTime />} />
+          <Route path="/upgrade-speed" element={<UpgradeSpeed />} />
+          <Route path="/missions" element={<Missions />} />
+          <Route path="/nft" element={<Nft />} />
+          <Route path="/refferals" element={<Refferal />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
