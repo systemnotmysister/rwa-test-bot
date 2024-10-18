@@ -21,35 +21,35 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
 /* Определение фонов для каждого экрана */
 .default-bg {
-  background-image: url('./pero.png');
+  background-image: url('../public/pero.png');
 }
 
 .claim-bg {
-  background-image: url('./pero.png');
+  background-image: url('../public/pero.png');
 }
 
 .upgrade-time-bg {
-  background-image: url('./pero.png');
+  background-image: url('../public/pero.png');
 }
 
 .upgrade-speed-bg {
-  background-image: url('./pero.png');
+  background-image: url('../public/pero.png');
 }
 
 .missions-bg {
-  background-image: url('./mission.png');
+  background-image: url('../public/mission.png');
 }
 
 .nft-bg {
-  background-image: url('./nft.png');
+  background-image: url('../public/nft.png');
 }
 
 .refferal-bg {
-  background-image: url('./refferal.png');
+  background-image: url('../public/refferal.png');
 }
 
 .wallet-bg {
-  background-image: url('./wallet-connect.png');
+  background-image: url('../public/wallet-connect.png');
 }
 
 
