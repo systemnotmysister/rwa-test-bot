@@ -146,12 +146,12 @@ position: absolute; */
 }
 
 
-  @media (max-width: 375px) {
+  /* @media (max-width: 375px) {
     .ttime{
       margin-bottom: 44% !important;
       height: 130% !important;
     }
-  }
+  } */
   /* @media (min-width: 400px) {
     .ttime{
       margin-bottom: 10% !important;
