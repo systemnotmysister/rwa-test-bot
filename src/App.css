@@ -21,32 +21,37 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
 /* Определение фонов для каждого экрана */
 .default-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('./pero.png');
 }
 
 .claim-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('./pero.png');
 }
 
 .upgrade-time-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('./pero.png');
 }
 
 .upgrade-speed-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('./pero.png');
 }
 
 .missions-bg {
-  background-image: url('../public/mission.png');
+  background-image: url('./mission.png');
 }
 
 .nft-bg {
-  background-image: url('../public/nft.png');
+  background-image: url('./nft.png');
 }
 
 .refferal-bg {
-  background-image: url('../public/refferal.png');
+  background-image: url('./refferal.png');
 }
+
+.wallet-bg {
+  background-image: url('./wallet-connect.png');
+}
+
 
 .top-buttons {
   padding: 10px;
@@ -58,11 +63,11 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: absolute;
-  bottom: 0px;
+  bottom: 5%;
   display: flex;
   width: 83%;
-  margin-left: 12%;
-  height: 129px;
+  margin-left: 10%;
+  /* height: 129px; */
 
 } 
 
@@ -137,6 +142,13 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
   @media (max-width: 375px) {
     .ttime{
-      margin-bottom: 44% !important
+      margin-bottom: 44% !important;
+      height: 130% !important;
     }
   }
+  /* @media (min-width: 400px) {
+    .ttime{
+      margin-bottom: 10% !important;
+      height: 130% !important;
+    }
+  } */

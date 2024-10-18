@@ -47,14 +47,6 @@ function Home() {
           </div>
         </div>
     
-        <Routes>
-          <Route path="/claim" element={<Claim />} />
-          <Route path="/upgrade-time" element={<UpgradeTime />} />
-          <Route path="/upgrade-speed" element={<UpgradeSpeed />} />
-          <Route path="/missions" element={<Missions />} />
-          <Route path="/nft" element={<Nft />} />
-          <Route path="/refferals" element={<Refferal />} />
-        </Routes>
       </div>
        
   

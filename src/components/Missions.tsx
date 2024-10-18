@@ -4,9 +4,19 @@ function Missions() {
 
 
     return (
-  
-        <div className="cont-mis"></div>
-       
+    
+          
+      <div   style={{ marginTop: '20% !important'}  }  >
+
+            <img   alt="refferals"  style={{ marginTop: '20% !important'}  }/>
+
+     
+
+            <img   alt="refferals"  style={{ marginTop: '20% !important'}  } />
+
+        </div>
+
+   
   
   
     );

@@ -1,6 +1,8 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
+import Wallet from './components/Wallet.tsx';
+// import  BackButton  from './components/BackButton.tsx';
 
 // Используем React.lazy для ленивой загрузки компонентов
 const Claim = React.lazy(() => import('./components/Claim.tsx'));
@@ -16,6 +18,8 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
+
+  
   useEffect(() => {
     // Изменение фона в зависимости от пути
     switch (location.pathname) {
@@ -37,6 +41,9 @@ function App() {
       case '/refferals':
         setBgClass('refferal-bg');
         break;
+        case '/wallet-connect':
+          setBgClass('wallet-bg');
+          break;
       default:
         setBgClass('default-bg');
     }
@@ -44,74 +51,42 @@ function App() {
 
   useEffect(() => {
     if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
-      const telegram = window.Telegram.WebApp;
-  
-      // Показываем кнопку "Назад"
-      telegram.BackButton.show();
-  
-      // Обработчик нажатия на кнопку "Назад"
-      telegram.BackButton.onClick(() => {
-        navigate(-1); // Переход назад по истории
-      });
-    } else {
-      console.error('Telegram WebApp is not available');
-    }
-  
-    return () => {
-      if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
-        window.Telegram.WebApp.BackButton.hide();
-      }
-    };
-  }, [navigate]);
+        const telegram = window.Telegram.WebApp;
 
+        telegram.BackButton.show();
+
+        telegram.BackButton.onClick(() => {
+            navigate(-1);
+        });
+
+        return () => {
+            telegram.BackButton.hide();
+        };
+    }
+}, [navigate]);
   return (
-    <div className={`container ${bgClass}`}>
+    <div className={`container  ${bgClass}`}>
+      {/* <BackButton />; */}
+
       <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />
         </div>
         <div className="button icon-wallet">
+        <Link to='/wallet-connect'>
           <img className='header-im' src="./wallet.png" alt="wallet" />
+          </Link>
+
         </div>
       </div>
 
-      <div className="bottom-buttons">
-        <div className="button">
-          <Link to='/upgrade-time'>
-            <img className='image' src="./cup.png" alt="upgrade time" />
-          </Link>
-        </div>
-        <div className="button">
-          <Link to='/claim'>
-            <img className='image' src="./dengi.png" alt="claim" />
-          </Link>
-        </div>
-        <div className="button">
-          <Link to='/upgrade-speed'>
-            <img className='image' src="./up.png" alt="upgrade speed" />
-          </Link>
-        </div>
-        <div className="button">
-          <Link to='/missions'>
-            <img className='image' src="./note.png" alt="missions" />
-          </Link>
-        </div>
-        <div className="button">
-          <Link to='/nft'>
-            <img className='image' src="./palitra.png" alt="nft" />
-          </Link>
-        </div>
-        <div className="button">
-          <Link to='/refferals'>
-            <img className='image' src="./ref.png" alt="refferals" />
-          </Link>
-        </div>
-      </div>
 
       {/* Добавляем Suspense для обработки загрузки компонентов */}
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/*" element={<Home />} />
+          <Route path="/wallet-connect" element={<Wallet />} />
+
           <Route path="/claim" element={<Claim />} />
           <Route path="/upgrade-time" element={<UpgradeTime />} />
           <Route path="/upgrade-speed" element={<UpgradeSpeed />} />
