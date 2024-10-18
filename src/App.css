@@ -129,7 +129,7 @@ position: absolute; */
   background-repeat: no-repeat;
   display: flex;
   margin-bottom: 65% !important;
-  height: 135%;
+  /* height: 135%; */
   }
 
 .sspeed{
