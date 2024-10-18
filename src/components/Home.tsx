@@ -13,7 +13,7 @@ function Home() {
 
     return (
   
-        <div className={`container }`}>
+        // <div className={`container }`}>
                <div className="bottom-buttons">
           <div className="button">
             <Link to='/upgrade-time'>
@@ -47,7 +47,7 @@ function Home() {
           </div>
         </div>
     
-      </div>
+      // </div>
        
   
   

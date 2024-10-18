@@ -6,7 +6,7 @@ function Speed() {
 
     return (
         
-        <><img className='ttime' src="./upgrade.png" alt="upgrade speed" /><div className="container">
+        <><img className='ttime' src="./upgrade.png" alt="upgrade speed" />
 
             <div className="bottom-buttons">
                 <div className="button">
@@ -39,7 +39,6 @@ function Speed() {
               <img className='image' src="./ref.png" alt="refferals" />
             </Link>
           </div>
-            </div>
         </div></>
 
             )

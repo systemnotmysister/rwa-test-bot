@@ -14,9 +14,9 @@ function Nft() {
               <div className="button">
           </div>
           <Popup showPopup={showPopup} onClose={togglePopup} />
-          <div className="bottom-buttons">
+          <div style={{justifyContent:'space-around ',display:'flex',flexDirection:'row' ,width:'83%' ,marginLeft:'8%',position:'absolute',bottom:'2%'}}>
           <div className="button"  onClick={togglePopup}>
-            {/* <Link to='/home'> */}
+            {/* <Link to='/home'> */} 
               <img className='image' src="./cup.png" alt="upgrade time" />
             {/* </Link> */}
           </div>

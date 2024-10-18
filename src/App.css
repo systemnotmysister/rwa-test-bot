@@ -63,15 +63,20 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: absolute;
-  bottom: 5%;
+  bottom: 2%;
   display: flex;
   width: 83%;
   margin-left: 10%;
-  /* height: 129px; */
+  /* height: 100px; */
 
 } 
 
-
+/* margin-left: 13%;
+justify-content: space-between;
+bottom: 0%;
+display: flex;
+width: 76%;
+position: absolute; */
 
 .button .image{    width: 80px;
   display: flex;}
@@ -124,6 +129,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background-repeat: no-repeat;
   display: flex;
   margin-bottom: 65% !important;
+  height: 135%;
   }
 
 .sspeed{
