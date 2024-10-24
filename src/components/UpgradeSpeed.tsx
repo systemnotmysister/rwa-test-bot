@@ -38,7 +38,13 @@ function Speed() {
         className={`ups ${isPlaying ? 'visible' : 'hidden'}`} 
         muted 
         onEnded={handleAnimationEnd}
-        style={{position:'absolute' }} 
+        controls={false} // Отключаем управление
+        style={{ 
+          position:'absolute',
+          maxWidth: '100%', // Ограничиваем ширину
+          maxHeight: '100%', // Ограничиваем высоту
+          objectFit: 'contain', // Соотношение сторон
+        }}        
 
       >
         <source src={speed} type="video/mp4" />

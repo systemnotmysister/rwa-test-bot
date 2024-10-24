@@ -38,6 +38,12 @@ function Time() {
         className={`ups ${isPlaying ? 'visible' : 'hidden'}`} 
         muted 
         onEnded={handleAnimationEnd}
+        controls={false} // Отключаем управление
+          style={{ 
+            maxWidth: '100%', // Ограничиваем ширину
+            maxHeight: '100%', // Ограничиваем высоту
+            objectFit: 'contain', // Соотношение сторон
+          }}
       >
         <source src={cloc} type="video/mp4" />
       </video>
