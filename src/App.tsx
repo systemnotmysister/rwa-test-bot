@@ -16,8 +16,6 @@ const Home = React.lazy(() => import('./components/Home.tsx'));
 
 function App() {
   const [bgClass, setBgClass] = useState('default-bg');
-  const location = useLocation();
-  const navigate = useNavigate();
 
 
   
@@ -50,21 +48,7 @@ function App() {
     }
   }, [location]);
 
-  useEffect(() => {
-    if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
-        const telegram = window.Telegram.WebApp;
-
-        telegram.BackButton.show();
-
-        telegram.BackButton.onClick(() => {
-            navigate(-1);
-        });
-
-        return () => {
-            telegram.BackButton.hide();
-        };
-    }
-}, [navigate]);
+  
   return (
     <div className={`container  ${bgClass}`}>
       {/* <BackButton />; */}
