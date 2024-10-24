@@ -3,6 +3,7 @@ import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import './App.css';
 import Wallet from './components/Wallet.tsx';
 // import  BackButton  from './components/BackButton.tsx';
+import vidos from '../public/vidos.mp4'
 
 // Используем React.lazy для ленивой загрузки компонентов
 const Claim = React.lazy(() => import('./components/Claim.tsx'));
@@ -45,7 +46,7 @@ function App() {
           setBgClass('wallet-bg');
           break;
       default:
-        setBgClass('default-bg');
+        setBgClass('background-video');
     }
   }, [location]);
 
@@ -67,7 +68,9 @@ function App() {
   return (
     <div className={`container  ${bgClass}`}>
       {/* <BackButton />; */}
-
+      <video autoPlay loop muted className="background-video">
+          <source src={vidos} type="video/mp4" />
+        </video>
       <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />
