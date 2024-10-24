@@ -1,11 +1,6 @@
-import React from 'react';
-import UpgradeSpeed from './UpgradeSpeed.tsx';
-import Claim from './Claim.tsx';
+
 import { Link, Routes, Route } from 'react-router-dom';
-import Missions from './Missions.tsx';
-import Nft from './Nft.tsx';
-import Refferal from './Refferal.tsx';
-import UpgradeTime from './UpgradeTime.tsx';
+
 
 
 function Home() {
@@ -13,7 +8,7 @@ function Home() {
 
     return (
   
-        // <div className={`container }`}>
+        <div className={`container `}>
                <div className="bottom-buttons">
           <div className="button">
             <Link to='/upgrade-time'>
@@ -47,7 +42,7 @@ function Home() {
           </div>
         </div>
     
-      // </div>
+       </div>
        
   
   

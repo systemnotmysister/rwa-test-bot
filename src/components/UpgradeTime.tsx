@@ -1,52 +1,42 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import cloc from '/cloc.mp4';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../App.css"; // Убедитесь, что импорт правильный
+import cloc from "/cloc.gif"; // Ваш GIF
+import time from "/time.png"; // Ваш GIF
 
-function Time() {
+function Speed() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlayAnimation = () => {
-    setIsPlaying(true);
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
+    setIsPlaying(true); // Запускаем анимацию
 
-  const handleAnimationEnd = () => {
-    setIsPlaying(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
+    // Установите время, равное длительности вашей анимации (в миллисекундах)
+    const animationDuration = 3500; // Замените на реальную длительность вашего GIF
+    setTimeout(() => {
+      setIsPlaying(false); // Завершаем анимацию
+    }, animationDuration);
   };
 
   return (
     <>
-      {/* Статичное изображение, которое скрывается при активации анимации */}
+      {/* Статичное изображение */}
       <img 
-        src="./time.png" 
+        src={time} 
         alt="Static preview" 
-        className={`ups ${isPlaying ? 'hidden' : ''}`} 
         onClick={handlePlayAnimation} 
-        style={{ cursor: 'pointer',position:'absolute' }} 
+        className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
+        style={{ cursor: 'pointer' ,position:'absolute',}} 
       />
-
-      {/* Видео, которое отображается при клике и скрывается после завершения */}
-      <video 
-        ref={videoRef} 
-        className={`ups ${isPlaying ? 'visible' : 'hidden'}`} 
-        muted 
-        onEnded={handleAnimationEnd}
-        controls={false} // Отключаем управление
-          style={{ 
-            maxWidth: '100%', // Ограничиваем ширину
-            maxHeight: '100%', // Ограничиваем высоту
-            objectFit: 'contain', // Соотношение сторон
-          }}
-      >
-        <source src={cloc} type="video/mp4" />
-      </video>
+      
+      {/* GIF анимация */}
+      {isPlaying && (
+        <img 
+          src={cloc} // Изменено на GIF
+          alt="GIF animation" 
+          style={{ cursor: 'pointer',position:'absolute' }} 
+          className={`ttime fade-in`}
+        />
+      )}
 
       <div className="bottom-buttons">
         <div className="button">
@@ -84,4 +74,4 @@ function Time() {
   );
 }
 
-export default Time;
+export default Speed;
