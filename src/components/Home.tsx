@@ -8,7 +8,18 @@ function Home() {
 
     return (
   
-        <div className={`container }`}>
+        <div className={'container'}>
+           <div className="top-buttons">
+        <div className="button icon-graduation">
+          <img className='header-im' src="./kepka.png" alt="graduation cap" />
+        </div>
+        <div className="button icon-wallet">
+        <Link to='/wallet-connect'>
+          <img className='header-im' src="./wallet.png" alt="wallet" />
+          </Link>
+
+        </div>
+      </div>
          <video autoPlay loop muted className="background-video">
           <source src={vidos} type="video/mp4" />
         </video>

@@ -100,10 +100,10 @@ function App() {
 { show && <WebAppBackButton onClick={onClick} /> }
 
 </TelegramWebApp>
-      <video autoPlay loop muted className="background-video">
+      {/* <video autoPlay loop muted className="background-video">
           <source src={vidos} type="video/mp4" />
-        </video>
-      <div className="top-buttons">
+        </video> */}
+      {/* <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />
         </div>
@@ -113,7 +113,7 @@ function App() {
           </Link>
 
         </div>
-      </div>
+      </div> */}
 
 
       {/* Добавляем Suspense для обработки загрузки компонентов */}
