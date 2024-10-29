@@ -20,12 +20,14 @@ function Speed() {
   return (
     <>
       {/* Статичное изображение */}
+      {/* <div className="container claim-bg"> */}
+
       <img 
         src={claim} 
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'25%'}} 
       />
       
       {/* GIF анимация */}
@@ -33,7 +35,7 @@ function Speed() {
         <img 
           src={ezgifclaim} // Изменено на GIF
           alt="GIF animation" 
-          style={{ cursor: 'pointer',position:'absolute' }} 
+          style={{ cursor: 'pointer',position:'absolute',height:' 405px',marginTop:'25%'   }} 
           className={`ttime fade-in`}
         />
       )}
@@ -70,6 +72,8 @@ function Speed() {
           </Link>
         </div>
       </div>
+{/* </div> */}
+      
     </>
   );
 }

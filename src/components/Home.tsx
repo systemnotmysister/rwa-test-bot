@@ -1,6 +1,6 @@
 
 import { Link, Routes, Route } from 'react-router-dom';
-
+import vidos from '/vidos.mp4'
 
 
 function Home() {
@@ -8,7 +8,10 @@ function Home() {
 
     return (
   
-        // <div className={`container }`}>
+        <div className={`container }`}>
+         <video autoPlay loop muted className="background-video">
+          <source src={vidos} type="video/mp4" />
+        </video>
                <div className="bottom-buttons">
           <div className="button">
             <Link to='/upgrade-time'>
@@ -42,7 +45,7 @@ function Home() {
           </div>
         </div>
     
-      // </div>
+      </div>
        
   
   

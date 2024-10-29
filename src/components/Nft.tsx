@@ -10,7 +10,7 @@ function Nft() {
 
     return (
   
-        <div className="container">
+        <div className="container nft-bg">
               <div className="button">
           </div>
           <Popup showPopup={showPopup} onClose={togglePopup} />

@@ -4,6 +4,9 @@ import './App.css';
 import Wallet from './components/Wallet.tsx';
 // import  BackButton  from './components/BackButton.tsx';
 import vidos from '../public/vidos.mp4'
+import { TelegramWebApp, WebAppBackButton } from "@kloktunov/react-telegram-webapp";
+
+
 
 // Используем React.lazy для ленивой загрузки компонентов
 const Claim = React.lazy(() => import('./components/Claim.tsx'));
@@ -14,10 +17,19 @@ const Refferal = React.lazy(() => import('./components/Refferal.tsx'));
 const Nft = React.lazy(() => import('./components/Nft.tsx'));
 const Home = React.lazy(() => import('./components/Home.tsx'));
 
+
 function App() {
   const [bgClass, setBgClass] = useState('default-bg');
+  const navigate = useNavigate();
 
 
+  
+  const [show, setShow] = useState(false);
+  const toggleBackButton = () => setShow(!show);
+
+  const onClick = () => {
+    console.log("Back button was clicked!");
+  }
   
   useEffect(() => {
     // Изменение фона в зависимости от пути
@@ -29,7 +41,7 @@ function App() {
         setBgClass('upgrade-time-bg');
         break;
       case '/upgrade-speed':
-        setBgClass('upgrade-speed-bg');
+        setBgClass('container upgrade-speed-bg');
         break;
       case '/missions':
         setBgClass('missions-bg');
@@ -44,17 +56,53 @@ function App() {
           setBgClass('wallet-bg');
           break;
       default:
-        setBgClass('background-video');
+        setBgClass(`container ${bgClass}`);
     }
   }, [location]);
 
+  useEffect(() => {
+    const initializeBackButton = () => {
+      if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
+        const telegram = window.Telegram.WebApp;
   
+        // Проверка версии API, возможно, BackButton доступен
+        console.log("Telegram WebApp API version:", telegram.version);
+  
+        // Проверка и активация BackButton
+        if (telegram.BackButton && telegram.BackButton.show) {
+          telegram.BackButton.show();
+  
+          telegram.BackButton.onClick(() => {
+            navigate(-1); // Возврат на предыдущую страницу
+          });
+        } else {
+          console.warn("BackButton не поддерживается в этой версии API");
+        }
+      }
+    };
+  
+    // Немного подождем и инициализируем API
+    setTimeout(initializeBackButton, 100); // Задержка для более надёжной инициализации
+  
+    // Скрытие кнопки при размонтировании компонента
+    return () => {
+      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.BackButton) {
+        window.Telegram.WebApp.BackButton.hide();
+      }
+    };
+  }, [navigate]);
   return (
-    <div className={`container  ${bgClass}`}>
+    
+    <div className={`container ${bgClass}`}>
       {/* <BackButton />; */}
-      <video autoPlay loop muted className="background-video">
+      <TelegramWebApp>
+
+{ show && <WebAppBackButton onClick={onClick} /> }
+
+</TelegramWebApp>
+      {/* <video autoPlay loop muted className="background-video">
           <source src={vidos} type="video/mp4" />
-        </video>
+        </video> */}
       <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />

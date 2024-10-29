@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@altiore/twa": "github:altiore/twa",
+    "@kloktunov/react-telegram-webapp": "^1.2.1",
     "@vkruglikov/react-telegram-web-app": "^2.1.9",
     "mkcert": "^3.2.0",
     "react": "^18.3.1",

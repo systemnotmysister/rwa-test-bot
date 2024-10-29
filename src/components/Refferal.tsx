@@ -4,10 +4,11 @@ function Refferal() {
 
 
     return (
-  
+        <div className="container refferal-bg">
+
         <div className="rreff"></div>
        
-  
+        </div>
   
     );
   }

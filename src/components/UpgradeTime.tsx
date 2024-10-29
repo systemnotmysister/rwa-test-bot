@@ -20,20 +20,21 @@ function Speed() {
   return (
     <>
       {/* Статичное изображение */}
+      {/* <div className="container upgrade-speed-bg"> */}
+
       <img 
         src={time} 
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'19%',height:'456px',}} 
       />
-      
       {/* GIF анимация */}
       {isPlaying && (
         <img 
           src={cloc} // Изменено на GIF
           alt="GIF animation" 
-          style={{ cursor: 'pointer',position:'absolute' }} 
+          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'26%',   height:'390px'   }} 
           className={`ttime fade-in`}
         />
       )}
@@ -70,6 +71,8 @@ function Speed() {
           </Link>
         </div>
       </div>
+      {/* </div> */}
+
     </>
   );
 }

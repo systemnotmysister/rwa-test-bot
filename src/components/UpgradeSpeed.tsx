@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../App.css"; 
 import speed from "/speed.gif"; 
 import upgrade from "/upgrade.png"; 
+import faf from "/faf.png"; 
 
 function Speed() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,23 +21,26 @@ function Speed() {
   return (
     <>
       {/* Статичное изображение */}
+      {/* <div className=" upgrade-cont"> */}
+
       <img 
         src={upgrade} 
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'21%', height:' 378px'}} 
       />
-      
+    
       {/* GIF анимация */}
       {isPlaying && (
         <img 
           src={speed} // Изменено на GIF
           alt="GIF animation" 
-          style={{ cursor: 'pointer',position:'absolute' }} 
+          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'25%',height:'350px'    }} 
           className={`ttime fade-in`}
         />
       )}
+      {/* </div> */}
 
       <div className="bottom-buttons">
         <div className="button">
@@ -70,6 +74,7 @@ function Speed() {
           </Link>
         </div>
       </div>
+
     </>
   );
 }

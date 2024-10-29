@@ -34,6 +34,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 /* Определение фонов для каждого экрана */
 .default-bg {
   background-image: url('../public/pero.png');
+      background-size: cover;
 }
 
 .claim-bg {
@@ -50,14 +51,17 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
 .missions-bg {
   background-image: url('../public/mission.png');
+  background-size: cover;
 }
 
 .nft-bg {
   background-image: url('../public/nft.png');
+  background-size: cover;
 }
 
 .refferal-bg {
-  background-image: url('../public/refferal.png');
+  background-size: cover;
+  background-image: url('/refferal.png');
 }
 
 .wallet-bg {
@@ -139,12 +143,19 @@ position: absolute; */
     margin-left: -1%;
     background-repeat: no-repeat;
     display: block;
-    margin-bottom:20%;
+    /* margin-bottom:20%; */
     transition: opacity 0.5s ease-in-out;
     width: 100%;
-
+position: fixed;
   }
   
+.upgrade-cont{
+  display: block;
+  position: absolute;
+margin-top: 50%
+}
+
+
   .ups.hidden {
     display: none;
     margin-bottom:20%;
@@ -189,6 +200,8 @@ position: absolute; */
     background-position: center;
     margin-left: -1%;
     background-repeat: no-repeat;
+    /* margin-top: 42%; */
+
     width: 101%;
   }
 
@@ -200,10 +213,14 @@ position: absolute; */
     margin-left: -1%;
     background-repeat: no-repeat;
     width: 101%;
-    margin-top: 20%;
-    opacity: 1;
+    opacity: 1;   
+    margin-top:'25%';
+height: 405px
   }
+.speed-cont{
+  margin-top: 29%; 
 
+}
 
   .gif-animation {
     animation: fadeInOut 3s forwards; /* 3 секунды */
@@ -222,7 +239,8 @@ position: absolute; */
     margin-left: -1%;
     background-repeat: no-repeat;
     width: 101%;
-    margin-top: 22%;    display: none; /* Скрываем статическое изображение */
+    margin-top: 22%; 
+       display: none; /* Скрываем статическое изображение */
   }
 
   
