@@ -77,10 +77,18 @@ video::-webkit-media-controls {
   background-image: url('../public/connect-wallet.png');
   /* background-size: cover; */
   /* justify-content: space-evenly; */
-  background-size: contain;
+  background-size: cover;
 
 }
-
+.bb{
+  margin-bottom: 10%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 2%;
+  display: flex;
+  width: 83%;
+}
 
 .top-buttons {
   padding: 10px;

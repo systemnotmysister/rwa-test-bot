@@ -1,6 +1,6 @@
 
 import { Link, Routes, Route } from 'react-router-dom';
-import vidos from '/vidos.mp4'
+import vezgif from '/vezgif.gif'
 
 
 function Home() {
@@ -9,12 +9,14 @@ function Home() {
     return (
   
         <div className={`container `}>
-             <div className={`animate-cont `}>
+             {/* <div className={`animate-cont `}> */}
 
-         <video controls={false} autoPlay muted loop  className="background-video">
-          <source src={vidos} type="video/mp4" />
-        </video>
-        </div>
+             <img 
+             style={{height:'100%'}}
+        src={vezgif} 
+       
+      />  
+        {/* </div> */}
 
         <div className="top-buttons">
         <div className="button icon-graduation">

@@ -18,7 +18,7 @@ function Wallet() {
 
         </div>
       </div>
-      <div className="buttons" style={{ justifyContent:'space-around',   width: '99%',display:'flex',marginBottom:'10%'}} >
+      <div className="bb" style={{ justifyContent:'space-around',   width: '99%',display:'flex',marginBottom:'10%'}} >
 
                 <img className='image' src="./add-wallet.png" alt="missions" style={{height: '52px',  width: '106px'}}/>
 
