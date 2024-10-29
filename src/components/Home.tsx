@@ -8,8 +8,15 @@ function Home() {
 
     return (
   
-        <div className={'container'}>
-           <div className="top-buttons">
+        <div className={`container `}>
+             <div className={`animate-cont `}>
+
+         <video controls={false} autoPlay muted loop  className="background-video">
+          <source src={vidos} type="video/mp4" />
+        </video>
+        </div>
+
+        <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />
         </div>
@@ -20,9 +27,6 @@ function Home() {
 
         </div>
       </div>
-         <video autoPlay loop muted className="background-video">
-          <source src={vidos} type="video/mp4" />
-        </video>
                <div className="bottom-buttons">
           <div className="button">
             <Link to='/upgrade-time'>

@@ -7,6 +7,10 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   vertical-align: baseline;
   background: transparent;
 }
+video::-webkit-media-controls {
+  display: none;
+}
+
 .container {
 
 
@@ -19,15 +23,21 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   /* padding: 10px; */
 }
 
-.background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+
+.animate-cont {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
+  overflow: hidden; /* для защиты от увеличения */
+}
 
+
+
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
   /* z-index: -1;  */
 }
 
@@ -67,6 +77,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background-image: url('../public/connect-wallet.png');
   /* background-size: cover; */
   /* justify-content: space-evenly; */
+  background-size: contain;
 
 }
 
@@ -75,7 +86,9 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  z-index: 100;
+  margin-bottom: -21%;
+  position: absolute;
+  width: 94%;
 }
 
 .bottom-buttons {
