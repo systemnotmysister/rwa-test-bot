@@ -27,7 +27,7 @@ function Speed() {
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'25%'}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'22%'}} 
       />
       
       {/* GIF анимация */}

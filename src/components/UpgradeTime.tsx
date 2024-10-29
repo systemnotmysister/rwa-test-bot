@@ -27,14 +27,14 @@ function Speed() {
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'19%',height:'390px',}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'20%',height:'430px',}} 
       />
       {/* GIF анимация */}
       {isPlaying && (
         <img 
           src={cloc} // Изменено на GIF
           alt="GIF animation" 
-          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'26%',   height:'330px'   }} 
+          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'27%',   height:'370px'   }} 
           className={`ttime fade-in`}
         />
       )}
