@@ -62,81 +62,47 @@ function App() {
   }, [location]);
 
 
-  
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
-      const initDataString = window.Telegram.WebApp.initData || "";
-      console.log("Raw initData:", initDataString);
-  
-      // Декодируем и извлекаем данные
-      try {
-        const decodedInitData = decodeURIComponent(initDataString);
-        const userDataString = decodedInitData.split('user=')[1];
-        const jsonString = userDataString.split('}')[0] + '}';
-  
-        const initData = JSON.parse(jsonString);
-        const user = initData?.user || {};
-        console.log("Parsed user data:", user || "User data not available.");
-  
-        // Проверяем, получены ли данные пользователя
-        if (user && Object.keys(user).length > 0) {
-          createUser(user, initDataString); // Передаем initDataString в функцию
-        } else {
-          console.error("User data is empty. Sending default values.");
-          createUser({}, initDataString); // Передаем initDataString даже если данные пользователя пустые
+        const initDataString = window.Telegram.WebApp.initData || "";
+        console.log("Raw initData:", initDataString);
+        
+        try {
+            // Decode and parse user data
+            const decodedInitData = decodeURIComponent(initDataString);
+            const userDataString = decodedInitData.split('user=')[1];
+            const jsonString = userDataString.split('}')[0] + '}';
+            const initData = JSON.parse(jsonString);
+            const user = initData?.user || {};
+            console.log("Parsed user data:", user || "User data not available.");
+
+            createUser(user, initDataString);
+        } catch (error) {
+            console.error("Failed to parse initData:", error);
         }
-      } catch (error) {
-        console.error("Failed to parse initData:", error);
-      }
     } else {
-      console.warn("Telegram WebApp API is not available. Are you testing in Telegram?");
+        console.warn("Telegram WebApp API is not available. Are you testing in Telegram?");
     }
-  }, []);
-  
-  const createUser = async (userData: any, initData: string) => {
-    const userPayload = {
-      id: userData.id || "", 
-      username: userData.username || "",
-      firstName: userData.first_name || "",
-      lastName: userData.last_name || "",
-      languageCode: userData.language_code || "en",
-      addedToAttachmentMenu: userData.added_to_attachment_menu || false,
-      allowsWriteToPm: userData.allows_write_to_pm || false,
-      photoUrl: userData.photo_url || "",
-      chatId: userData.chat_id || "",
-      referralCode: userData.referral_code || "",
-      sponsorId: userData.sponsor_id || "",
-      friendsCount: userData.friends_count || 0,
-      createdAt: Date.now(), 
-      farmingLevel: 0,
-      farmingPerHour: 0,
-      accumulationLevel: 0,
-      accumulationDuration: 0,
-      farmingBalance: 0,
-      availableClaimAmount: 0,
-      lastCalimAt: 0,
-      bot: userData.bot || false,
-      premium: userData.premium || false,
-    };
-  
+}, []);
+
+const createUser = async (userData: any, initData: string) => {
     try {
-      const response = await axios.post('/api/v1/user', userPayload, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': initData, // Указываем initData в заголовке
-        },
-      });
-      console.log('User created successfully:', response.data);
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        console.error('Error creating user:', error.response ? error.response.data : error.message);
-      } else {
-        console.error('An unexpected error occurred:', error);
-      }
+        // Send request to backend with hardcoded inviteCode in query params
+        const response = await axios.post(`/api/v1/user?inviteCode=frndId6364191868`, userData, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': initData,
+            },
+        });
+        console.log('User created successfully:', response.data);
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.error('Error creating user:', error.response ? error.response.data : error.message);
+        } else {
+            console.error('An unexpected error occurred:', error);
+        }
     }
-  };
-  
-  
+};
 
   useEffect(() => {
     const initializeBackButton = () => {
