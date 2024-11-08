@@ -62,21 +62,26 @@ video::-webkit-media-controls {
 .missions-bg {
   background-image: url('../public/mission.png');
   background-size: cover;
+  z-index: 100;
 }
 .nft-bg {
   background-image: url('../public/nft.png');
   background-size: cover;
+  z-index: 100;
+
 }
 
 .refferal-bg {
   background-size: cover;
   background-image: url('/refferal.png');
+  z-index: 100;
+
 }
 
 .wallet-bg {
   background-image: url('../public/connect-wallet.png');
   /* background-size: cover; */
-  /* justify-content: space-evenly; */
+  z-index: 100;
   background-size: cover;
 
 }

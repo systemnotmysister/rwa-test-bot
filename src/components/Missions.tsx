@@ -10,6 +10,7 @@ function Missions() {
       <div className='container missions-bg '>
  
  <div className="top-buttons">
+
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />
         </div>
@@ -17,9 +18,8 @@ function Missions() {
         <Link to='/wallet-connect'>
           <img className='header-im' src="./wallet.png" alt="wallet" />
           </Link>
-
         </div>
-      </div>
+ </div>
 
         <div className="bottom-buttons" style={{marginLeft:'10%',justifyContent:'space-between',position:'absolute',bottom:'5%',width:'83%'}}>
         <div className="button">

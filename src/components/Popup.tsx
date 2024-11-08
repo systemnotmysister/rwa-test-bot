@@ -9,7 +9,7 @@ function Popup({ showPopup, onClose }: { showPopup: boolean; onClose: () => void
 
       <div className="popup-content">
         <video autoPlay  className="popup-animation">
-          <source src="/pop.MP4" type="video/mp4" />
+          <source src="/pop.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
