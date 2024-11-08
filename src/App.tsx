@@ -74,9 +74,10 @@ function App() {
             const jsonString = userDataString.split('}')[0] + '}';
             const initData = JSON.parse(jsonString);
             const user = initData?.user || {};
+            const tgWebAppStartParam = decodedInitData.split('start=')[1]
             console.log("Parsed user data:", user || "User data not available.");
-
-            createUser(user, initDataString);
+            console.log("tgWebAppStartParam:", tgWebAppStartParam);
+            createUser(user, initDataString,tgWebAppStartParam);
         } catch (error) {
             console.error("Failed to parse initData:", error);
         }
@@ -85,10 +86,10 @@ function App() {
     }
 }, []);
 
-const createUser = async (userData: any, initData: string) => {
+const createUser = async (userData: any, initData: string,tgWebAppStartParam: string) => {
     try {
         // Send request to backend with hardcoded inviteCode in query params
-        const response = await axios.post(`/api/v1/user?inviteCode=frndId6364191868`, userData, {
+        const response = await axios.post(`/api/v1/user?inviteCode=${tgWebAppStartParam}`, userData, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': initData,
