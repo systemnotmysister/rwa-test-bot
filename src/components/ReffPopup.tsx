@@ -13,7 +13,7 @@ interface ShowReffPopupProps {
 
 function ReffPopup({ showReffPopup, onClose, buttonRef }: ShowReffPopupProps) {
   const popupRef = useRef<HTMLDivElement>(null);
-  const referralLink="https://t.me/atic_test_bot/?start?startapp?=frndId6364191868"
+  const referralLink="https://rwa-test-bot-tkec.vercel.app/?start=frndId6364191868"
   const handleCopyReferral = () => {
     if (referralLink) {
       navigator.clipboard.writeText(referralLink).then(
@@ -26,7 +26,6 @@ function ReffPopup({ showReffPopup, onClose, buttonRef }: ShowReffPopupProps) {
       );
     }
   };
-
   // Функция для отправки ссылки (если Telegram поддерживает API)
   const handleShareReferral = () => {
   
