@@ -13,8 +13,7 @@ interface ShowReffPopupProps {
 
 function ReffPopup({ showReffPopup, onClose, buttonRef }: ShowReffPopupProps) {
   const popupRef = useRef<HTMLDivElement>(null);
-  const referralLink="https://t.me/atic_test_bot/aticotestbot?start?startapp?=frndId6364191868"
-  // Функция для копирования ссылки
+  const referralLink="https://t.me/atic_test_bot/?start?startapp?=frndId6364191868"
   const handleCopyReferral = () => {
     if (referralLink) {
       navigator.clipboard.writeText(referralLink).then(
@@ -45,7 +44,6 @@ function ReffPopup({ showReffPopup, onClose, buttonRef }: ShowReffPopupProps) {
         console.error("Ошибка при отправке реферальной ссылки", error);
       });
     } else {
-      // Если ни один метод не поддерживается, просто скопируем ссылку
       navigator.clipboard.writeText(referralLink);
       alert("Ссылка скопирована. Поделитесь с друзьями!");
     }
