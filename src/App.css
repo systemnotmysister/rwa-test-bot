@@ -37,7 +37,7 @@ video::-webkit-media-controls {
 
 /* Определение фонов для каждого экрана */
 .default-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('../public/clearbg2.png');
       background-size: cover;
 }
 
@@ -132,23 +132,33 @@ bottom:2%;  display: flex;
     margin-left: -1%;
     background-repeat: no-repeat;
     display: block;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
     width: 100%;
     position: fixed;
     
   }
-  .fade-in {
-    opacity: 1;
+  /* .fade-in {
+    animation: fadeIn 0.3s ease-in;
   }
   
   .fade-out {
-    opacity: 0;
+    animation: fadeOut 0.3s ease-out;
+  } */
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
   
-  .gif-fade-in {
-    opacity: 0;
-    animation: fadeIn 0.2s forwards;
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
   }
+  
+  /* .gif-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.24s forwards;
+  } */
   
   @keyframes fadeIn {
     to {
@@ -194,11 +204,11 @@ bottom:2%;  display: flex;
     
   }
   
-  @keyframes fadeInOut {
+  /* @keyframes fadeInOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
     
-  }
+  } */
   
   .ttime.fade-out
   {
@@ -208,6 +218,7 @@ bottom:2%;  display: flex;
     margin-left: -1%;
     background-repeat: no-repeat;
     /* margin-top: 42%; */
+    opacity: 0;   
 
     width: 101%;
   }
@@ -222,6 +233,8 @@ bottom:2%;  display: flex;
     width: 101%;
     opacity: 1;   
     margin-top:'25%';
+    transition: opacity 0.5s ease-in-out;
+
   }
 .speed-cont{
   margin-top: 29%; 
@@ -229,7 +242,7 @@ bottom:2%;  display: flex;
 }
 
   .gif-animation {
-    animation: fadeInOut 3s forwards; /* 3 секунды */
+    /* animation: fadeInOut 3s forwards; */
     display: block; /* Показываем GIF */
     background-size: contain;
     background-position: center;
