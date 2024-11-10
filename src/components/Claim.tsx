@@ -47,7 +47,7 @@ function Claim() {
     }
 
 
-      const animationDuration = 3700;
+      const animationDuration = 3650;
 
       setTimeout(() => {
         setIsPlaying(false); 
