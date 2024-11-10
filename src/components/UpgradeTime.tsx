@@ -55,7 +55,7 @@ function Time() {
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'20%',height:'430px',}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'20%',}} 
       />
   <p>Accumulation Level: {storageData.accumulationLevel}</p>
   <p>Accumulation Duration: {storageData.accumulationDuration}</p>
@@ -63,7 +63,7 @@ function Time() {
         <img 
           src={cloc} 
           alt="GIF animation" 
-          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'27%',   height:'367px'   }} 
+          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'26.5%',    }} 
           className={`ttime fade-in`}
         />
       )}

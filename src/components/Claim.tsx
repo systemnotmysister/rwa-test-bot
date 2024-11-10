@@ -47,7 +47,7 @@ function Claim() {
     }
 
 
-      const animationDuration = 3750;
+      const animationDuration = 3700;
 
       setTimeout(() => {
         setIsPlaying(false); 
@@ -74,7 +74,7 @@ function Claim() {
         <img 
           src={clearupa} // Изменено на GIF
           alt="GIF animation" 
-          style={{position:'absolute',height:' 390px',marginTop:'14%'   }} 
+          style={{position:'absolute',marginTop:'14%'   }} 
           className={`ttime fade-in`}
         />
       )}
