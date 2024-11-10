@@ -37,7 +37,7 @@ function Time() {
         farmingPerHour: response.data.data.farmingPerHour,
       });
     } catch (error) {
-      console.error('Error upgrading storage level:', error);
+      console.error('Error upgrading storage level:', error); 
     }
 
     const animationDuration = 2400;

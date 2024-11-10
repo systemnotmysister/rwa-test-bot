@@ -11,11 +11,25 @@ import claimcut from "/claimcut.gif"; // Ваш GIF
 
 function Claim() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({
+    farmingBalance: 0,
+    farmingLevel: 0,
+    farmingPerHour: 0,
+    accumulationLevel: 0,
+    accumulationDuration: 0,
+    availableClaimAmount: 0,
+  });
   const [showGif, setShowGif] = useState(false);
 
   // Длительность анимации GIF
   const animationDuration = 3650;
+
+
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = claimcut; // Путь к вашему GIF
+  }, []);
 
   const handlePlayAnimation = async () => {
     setIsPlaying(true); // Запускаем анимацию
@@ -29,15 +43,22 @@ function Claim() {
         },
       });
       console.log('Claim successful:', response.data);
+
       setUserData({
-        ...response.data,
-      });
+        farmingBalance: response.data.data.farmingBalance,
+        farmingLevel: response.data.data.farmingLevel,
+        farmingPerHour: response.data.data.farmingPerHour,
+        accumulationLevel: response.data.data.accumulationLevel,
+        accumulationDuration: response.data.data.accumulationDuration,
+        availableClaimAmount: response.data.data.availableClaimAmount,
+        });
+
+
     } catch (error) {
       console.error('Error upgrading storage level:', error);
     }
   };
 
-  // useEffect для управления отображением GIF и окончания анимации
   useEffect(() => {
     if (isPlaying) {
       // Показываем GIF с небольшой задержкой для предотвращения мерцания
@@ -69,9 +90,9 @@ function Claim() {
           cursor: 'pointer',
           position: 'absolute',
           marginTop: '14%',
-          display: showGif ? 'none' : 'block',
         }} 
       />
+      <p>Farming Balance: {userData.farmingBalance}</p>
 
       <p style={{
         marginBottom: '312px',
@@ -79,7 +100,9 @@ function Claim() {
         zIndex: '100',
         transform: 'rotate(-10deg)'
       }}>
+      {userData.availableClaimAmount}
       </p>
+        
 
       {/* GIF анимация, показанная только при isPlaying */}
       {showGif && (
@@ -89,9 +112,13 @@ function Claim() {
           style={{
             position: 'absolute',
             marginTop: '14%',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            opacity: isPlaying ? 1 : 0,
+            // transition: 'opacity 0.5s ease-out'
+            
           }} 
-          className="ttime fade-in"
+          className={`ttime fade-in`}
+
         />
       )}
     </>
