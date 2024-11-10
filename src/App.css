@@ -132,7 +132,7 @@ bottom:2%;  display: flex;
     margin-left: -1%;
     background-repeat: no-repeat;
     display: block;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     width: 100%;
     position: fixed;
     
@@ -145,7 +145,7 @@ bottom:2%;  display: flex;
     animation: fadeOut 0.3s ease-out;
   } */
   
-  @keyframes fadeIn {
+  /* @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
@@ -153,18 +153,18 @@ bottom:2%;  display: flex;
   @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
-  }
+  } */
   
   /* .gif-fade-in {
     opacity: 0;
     animation: fadeIn 0.24s forwards;
   } */
   
-  @keyframes fadeIn {
+  /* @keyframes fadeIn {
     to {
       opacity: 1;
     }
-  }
+  } */
 
 .upgrade-cont{
   display: block;
