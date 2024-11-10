@@ -40,7 +40,7 @@ function Time() {
       console.error('Error upgrading storage level:', error);
     }
 
-    const animationDuration = 5000;
+    const animationDuration = 2400;
 
     setTimeout(() => {
       setIsPlaying(false); 
@@ -63,7 +63,7 @@ function Time() {
         <img 
           src={cloc} 
           alt="GIF animation" 
-          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'27%',   height:'370px'   }} 
+          style={{ cursor: 'pointer',position:'absolute' ,marginTop:'27%',   height:'367px'   }} 
           className={`ttime fade-in`}
         />
       )}

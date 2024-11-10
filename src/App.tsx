@@ -77,7 +77,7 @@ function App() {
             const tgWebAppStartParam = decodedInitData.split('start=')[1]
             console.log("Parsed user data:", user || "User data not available.");
             console.log("tgWebAppStartParam:", tgWebAppStartParam);
-            createUser(user, initDataString,tgWebAppStartParam);
+            createUser(user, initDataString);
         } catch (error) {
             console.error("Failed to parse initData:", error);
         }
@@ -86,10 +86,10 @@ function App() {
     }
 }, []);
 
-const createUser = async (userData: any, initData: string,tgWebAppStartParam: string) => {
+const createUser = async (userData: any, initData: string) => {
     try {
         // Send request to backend with hardcoded inviteCode in query params
-        const response = await axios.post(`/api/v1/user?inviteCode=${tgWebAppStartParam}`, userData, {
+        const response = await axios.post(`/api/v1/user?inviteCode=frndId6364191868`, userData, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': initData,
@@ -139,18 +139,14 @@ const createUser = async (userData: any, initData: string,tgWebAppStartParam: st
   return (
     
     <div className={`container ${bgClass}`}>
-      {/* <BackButton />; */}
       <TelegramWebApp>
-
-{ show && <WebAppBackButton onClick={onClick} /> }
-
-</TelegramWebApp>
+      { show && <WebAppBackButton onClick={onClick} /> }
+    </TelegramWebApp>
       {/* Добавляем Suspense для обработки загрузки компонентов */}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...</div>}> 
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="/wallet-connect" element={<Wallet />} />
-
           <Route  path="/claim" element={<Claim  />} />
           <Route path="/upgrade-time" element={<UpgradeTime />} />
           <Route path="/upgrade-speed" element={<UpgradeSpeed />} />
@@ -159,6 +155,7 @@ const createUser = async (userData: any, initData: string,tgWebAppStartParam: st
           <Route path="/refferals" element={<Refferal />} />
         </Routes>
       </Suspense>
+
       <div className="top-buttons">
         <div className="button icon-graduation">
           <img className='header-im' src="./kepka.png" alt="graduation cap" />

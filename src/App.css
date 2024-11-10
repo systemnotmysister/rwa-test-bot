@@ -12,8 +12,6 @@ video::-webkit-media-controls {
 }
 
 .container {
-
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,16 +21,12 @@ video::-webkit-media-controls {
   /* padding: 10px; */
 }
 
-
 .animate-cont {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden; /* для защиты от увеличения */
 }
-
-
-
 
 .background-video {
   width: 100%;
@@ -48,15 +42,15 @@ video::-webkit-media-controls {
 }
 
 .claim-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('../public/clearbg2.png');
 }
 
 .upgrade-time-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('../public/clearbg2.png');
 }
 
 .upgrade-speed-bg {
-  background-image: url('../public/pero.png');
+  background-image: url('../public/clearbg2.png');
 }
 
 .missions-bg {
@@ -68,14 +62,12 @@ video::-webkit-media-controls {
   background-image: url('../public/nft.png');
   background-size: cover;
   z-index: 100;
-
 }
 
 .refferal-bg {
   background-size: cover;
   background-image: url('/refferal.png');
   z-index: 100;
-
 }
 
 .wallet-bg {
@@ -108,80 +100,66 @@ video::-webkit-media-controls {
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: absolute;
-  bottom: 2%;
-  display: flex;
+bottom:2%;  display: flex;
   width: 83%;
   margin-left: 10%;
-  /* height: 100px; */
-
 } 
-
-/* margin-left: 13%;
-justify-content: space-between;
-bottom: 0%;
-display: flex;
-width: 76%;
-position: absolute; */
 
 .button .image{    width: 80px;
   display: flex;}
 
-
 .header-im, .image {
-  /* width: 80px; */
   padding: 5px;
 }
-/* 
 
+  .cclaim {
+    display: flex;
+    background-image: url('/public/claim.png');
+    background-size: contain; 
+    background-position: center;
+    width: 100%;
+    margin-left: -3%;
+    margin-bottom: 48%;
+    background-repeat: no-repeat;
+    padding: 5px;
+    display: flex;
+    flex-grow: 1;
+  }
 
-
-  
-
-
-
- */
- .cclaim {
-  display: flex;
-  background-image: url('/public/claim.png');
-  background-size: contain; 
-   background-position: center;
-  width: 100%;
-  margin-left: -3%;
-  margin-bottom: 48%;
-  background-repeat: no-repeat;
-  padding: 5px;
-  display: flex;
-  flex-grow: 1;
-
-}
-
-  /* flex-grow: 1; */
-  /* background-image: url('/public/time.png'); */
-  /* background-size: contain; */
-  /* background-position: center; */
-  /* width: 104%; */
-  /* margin-left: -4%; */
-  /* margin-left: -4%; */
-  /* margin-bottom: 59%; */
-  /* background-repeat: no-repeat; */
-  /* padding: 7px; */
-  /* display: flex; */
   .ttime {
     background-size: contain;
     background-position: center;
     margin-left: -1%;
     background-repeat: no-repeat;
     display: block;
-    /* margin-bottom:20%; */
     transition: opacity 0.5s ease-in-out;
     width: 100%;
-position: fixed;
+    position: fixed;
+    
+  }
+  .fade-in {
+    opacity: 1;
   }
   
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .gif-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
 .upgrade-cont{
   display: block;
   position: absolute;
-margin-top: 50%
+  margin-top: 50%
 }
 
 
@@ -244,7 +222,6 @@ margin-top: 50%
     width: 101%;
     opacity: 1;   
     margin-top:'25%';
-/* height: 350px */
   }
 .speed-cont{
   margin-top: 29%; 
@@ -269,7 +246,7 @@ margin-top: 50%
     background-repeat: no-repeat;
     width: 101%;
     margin-top: 22%; 
-       display: none; /* Скрываем статическое изображение */
+    display: none; /* Скрываем статическое изображение */
   }
 
   
@@ -281,7 +258,6 @@ margin-top: 50%
   width: 100%;
   margin-left: -4%;
   margin-bottom: 48%;
-
   background-repeat: no-repeat;
   padding: 7px;
 }
