@@ -47,7 +47,7 @@ function Claim() {
     }
 
 
-      const animationDuration = 3400;
+      const animationDuration = 3750;
 
       setTimeout(() => {
         setIsPlaying(false); 
@@ -63,7 +63,7 @@ function Claim() {
         alt="Static preview" 
         onClick={handlePlayAnimation} 
         className={`ttime ${isPlaying ? 'fade-out' : 'fade-in'}`}
-        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'15%'}} 
+        style={{ cursor: 'pointer' ,position:'absolute',marginTop:'14%'}} 
       />
        <p>Farming Balance: {userData.farmingBalance}</p>
        <p style={{marginBottom: '312px',marginLeft:'150px',zIndex:'100',transform:'rotate(-10deg)'}}> {userData.availableClaimAmount} </p>
@@ -74,7 +74,7 @@ function Claim() {
         <img 
           src={clearupa} // Изменено на GIF
           alt="GIF animation" 
-          style={{position:'absolute',height:' 400px',marginTop:'15%'   }} 
+          style={{position:'absolute',height:' 390px',marginTop:'14%'   }} 
           className={`ttime fade-in`}
         />
       )}
