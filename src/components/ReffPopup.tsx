@@ -2,6 +2,7 @@ import React, { useEffect, useRef, MutableRefObject, useState } from 'react';
 import refpopbg from '/refpopbg.png';
 import refshare from '/refshare.png';
 import refcopy from '/refcopy.png';
+import { useAppContext } from '../AppContext';
 
 
 
@@ -12,8 +13,10 @@ interface ShowReffPopupProps {
 }
 
 function ReffPopup({ showReffPopup, onClose, buttonRef }: ShowReffPopupProps) {
+  const {  userData } = useAppContext();
+
   const popupRef = useRef<HTMLDivElement>(null);
-  const referralLink="https://t.me/atic_test_bot/aticotestbot?startapp=frndId6364191868"
+  const referralLink=`https://t.me/atic_test_bot/aticotestbot?startapp=${userData.referralCode}`
   const handleCopyReferral = () => {
     if (referralLink) {
       navigator.clipboard.writeText(referralLink).then(
